@@ -57,7 +57,22 @@ fonts
    --light-shadow: 0 10px 25px rgba(0,0,0,0.08);
    --dark-shadow: 0 25px 60px rgba(0,0,0,0.20);
    --max-width: 1170px;
-}
+ }
+
+ /* Dark theme variables */
+ :root[data-theme="dark"] {
+   /* invert greys for dark UI */
+   --clr-grey-1: hsl(210, 36%, 96%);
+   --clr-grey-2: hsl(214, 20%, 85%);
+   --clr-grey-3: hsl(216, 16%, 78%);
+   --clr-grey-4: hsl(218, 14%, 70%);
+   --clr-grey-5: hsl(220, 12%, 62%);
+   --clr-grey-6: hsl(220, 12%, 46%);
+   --clr-grey-7: hsl(220, 10%, 36%);
+   --clr-grey-8: hsl(220, 10%, 26%);
+   --clr-grey-9: hsl(240, 9%, 18%);
+   --clr-grey-10: hsl(240, 10%, 12%);
+ }
 /* 
 ============
 Global Style
@@ -82,6 +97,15 @@ body{
       radial-gradient(1200px 800px at 10% -10%, hsla(258, 74%, 62%, 0.18), transparent 55%),
       radial-gradient(1000px 700px at 110% 10%, hsla(200, 85%, 54%, 0.16), transparent 55%),
       linear-gradient(180deg, hsl(240 10% 99%), hsl(240 10% 97%));
+}
+
+/* dark theme page background */
+:root[data-theme="dark"] body{
+  color-scheme: dark;
+  background:
+    radial-gradient(1200px 800px at -10% -10%, hsla(258, 74%, 62%, 0.16), transparent 55%),
+    radial-gradient(1000px 700px at 110% 10%, hsla(200, 85%, 54%, 0.16), transparent 55%),
+    linear-gradient(180deg, hsl(240 14% 8%), hsl(240 14% 10%));
 }
 ul{
     list-style-type: none;
@@ -179,6 +203,20 @@ h1{
    box-shadow: 0 16px 30px rgba(80, 42, 185, 0.28);
 
  }
+
+ /* outline variant */
+ .btn.btn-outline{
+   background: transparent;
+   color: var(--clr-primary-4);
+   border: 2px solid var(--clr-primary-6);
+   box-shadow: none;
+ }
+ .btn.btn-outline:hover{
+   color: var(--clr-white);
+   background: var(--gradient-brand);
+   border-color: transparent;
+   box-shadow: 0 12px 24px rgba(80, 42, 185, 0.24);
+ }
  /* section */
  .section{
     padding: 5rem 0;
@@ -241,9 +279,10 @@ h1{
   }
   .nav-header{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr auto auto; /* brand | spacer | theme | menu */
     -webkit-box-align: center;
     align-items: center;
+    gap: 0.5rem;
   }
 .nav-btn{
     background: rgba(255,255,255,0.6);
@@ -260,6 +299,27 @@ h1{
     -webkit-backdrop-filter: blur(10px) saturate(120%);
     backdrop-filter: blur(10px) saturate(120%);
     box-shadow: var(--light-shadow);
+  }
+  /* theme toggle button */
+  .theme-toggle{
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.45);
+    color: var(--clr-primary-4);
+    font-size: 1.25rem;
+    cursor: pointer;
+    justify-self: right;
+    border-radius: 0.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+    box-shadow: var(--light-shadow);
+    margin-right: 0.5rem;
+  }
+  .theme-toggle:hover{
+    color: var(--clr-accent);
   }
   @media screen and (min-width:768px) {
     .nav{ background: rgba(255,255,255,0.55); }
@@ -323,10 +383,18 @@ h1{
     z-index: 2;
     box-shadow: var(--light-shadow);
   }
+  /* dark themed nav */
+  :root[data-theme="dark"] .nav{
+    background: rgba(20,20,26,0.6);
+    border-bottom-color: rgba(255,255,255,0.06);
+  }
+  :root[data-theme="dark"] .navbar-fixed{
+    background: rgba(20,20,26,0.7);
+  }
   /* 
-===============
+ ===============
     SideBar
-===============
+ ===============
  */
 .sidebar{
   position: fixed;
@@ -418,6 +486,13 @@ underline in globals
    background-size: 200% 200%, 200% 200%, 100% 100%;
    animation: gradientShift 18s ease infinite;
 }
+.hero-subtitle{
+  color: var(--clr-grey-4);
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-top: -0.25rem;
+}
 .hero-info{
    background: var(--gradient-surface);
    border: 1px solid rgba(255,255,255,0.45);
@@ -432,6 +507,12 @@ underline in globals
    -webkit-background-clip: text;
    background-clip: text;
    -webkit-text-fill-color: transparent;
+}
+/* dark hero */
+:root[data-theme="dark"] .hero{
+  background: radial-gradient(1200px 800px at -10% 0%, hsla(258, 74%, 62%, 0.18), transparent 55%),
+              radial-gradient(1000px 700px at 110% -10%, hsla(200, 85%, 54%, 0.18), transparent 55%),
+              linear-gradient(180deg, hsl(240 14% 10%), hsl(240 14% 8%));
 }
 .hero-center{
    min-height: calc(100vh - 5rem);
@@ -559,6 +640,10 @@ underline in globals
    color: var(--clr-white);
 }
 
+:root[data-theme="dark"] .service{
+  background: hsl(240, 14%, 12%);
+}
+
 .service:hover .underline {
    background: var(--clr-white);
 }
@@ -594,6 +679,8 @@ underline in globals
    border-radius: var(--radius);
    margin-bottom: 2rem;
    box-shadow: var(--light-shadow);
+   transform: translateY(0);
+   transition: transform .25s ease, box-shadow .25s ease;
 }
 .project-info {
    text-align: center;
@@ -643,6 +730,10 @@ underline in globals
    opacity: 1;
    -webkit-transform: scale(0.98);
    transform: scale(0.98);
+}
+.project:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--dark-shadow);
 }
 @media screen and (min-width: 676px) {
    .projects-center {
@@ -774,7 +865,7 @@ connect
    );
 }
 /* 
-===========
+=========== 
    Skills
 */
 @media screen and (min-width: 768px) {
@@ -954,4 +1045,54 @@ connect
   0% { background-position: 0% 50%, 100% 50%, 0% 0%; }
   50% { background-position: 100% 50%, 0% 50%, 0% 0%; }
   100% { background-position: 0% 50%, 100% 50%, 0% 0%; }
+}
+
+/*
+=====================
+  Resume / Timeline
+=====================
+*/
+.timeline{
+  position: relative;
+  margin: 2rem auto;
+  max-width: var(--max-width);
+}
+.timeline::before{
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--clr-primary-7), transparent);
+}
+.timeline-item{
+  position: relative;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+  background: var(--clr-white);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: var(--light-shadow);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+.timeline-item::before{
+  content: "";
+  position: absolute;
+  left: -2rem;
+  top: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--clr-primary-6);
+  box-shadow: 0 0 0 4px rgba(80,42,185,0.15);
+}
+:root[data-theme="dark"] .timeline-item{
+  background: hsl(240, 14%, 12%);
+  border-color: rgba(255,255,255,0.06);
+}
+
+/* Dark variants for sections */
+:root[data-theme="dark"] .bg-grey{
+  background: hsl(240, 12%, 14%);
 }
