@@ -1,96 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About · Farhan Yousaf</title>
-    <link rel="icon" href="./img/WhatsApp Image 2023-11-03 at 12.54.13 AM.jpeg" type="image/png" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <nav class="nav" id="nav">
-      <div class="nav-center">
-        <div class="nav-header">
-          <h3 class="brand">Farhan <span>Yousaf</span></h3>
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-            <i class="fa-regular fa-moon"></i>
-          </button>
-          <button class="nav-btn" id="nav-btn" aria-label="Open menu">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Farhan Yousaf</title>
+  <meta name="description" content="About Farhan Yousaf — MERN stack developer and founder of GHLThemer." />
+  <link rel="icon" href="./img/WhatsApp Image 2023-11-03 at 12.54.13 AM.jpeg" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800;900&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
 
-    <aside class="sidebar" id="sidebar">
-      <div>
-        <button id="close-btn" class="close-btn"><i class="fas fa-times"></i></button>
-        <ul class="sidebar-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </aside>
-
-    <header class="hero">
-      <div class="section-center hero-center">
-        <article class="hero-info">
-          <div class="underline"></div>
-          <h1>About me</h1>
-          <p class="hero-subtitle">MERN-stack developer based in Pakistan</p>
-          <a href="projects.html" class="btn btn-outline">view projects</a>
-        </article>
-        <article class="hero-img">
-          <img src="./img/facebook img.jpg" class="hero-photo" alt="Farhan portrait" />
-        </article>
-      </div>
-    </header>
-
-    <section class="section">
-      <div class="section-center">
-        <div class="section-title">
-          <h2>Experience</h2>
-          <div class="underline"></div>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h4>Full‑Stack Developer · Freelance</h4>
-            <p>2023 — Present · Built responsive React/Next apps, REST APIs, and integrations.</p>
-          </div>
-          <div class="timeline-item">
-            <h4>Frontend Developer · Personal Projects</h4>
-            <p>2022 — 2023 · Prototyped UI systems, component libraries, and design tokens.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <ul class="social-icons">
-        <li><a href="https://www.facebook.com/farhan.yousaf.313" class="social-icon"><i class="fab fa-facebook"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/farhan-yousaf-267771236/" class="social-icon"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="https://twitter.com/bobyjutt729" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-        <li><a href="https://www.instagram.com/farhanyousaf729/" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Farhan<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+        <li><a href="index.html#product" class="nav-link">Product</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="https://www.ghlthemer.com" target="_blank" rel="noopener" class="nav-cta">Try GHLThemer</a></li>
       </ul>
-      <p>&copy; <span id="date"></span> Farhan · All Rights Reserved</p>
-    </footer>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-    <script src="./js/app.js"></script>
-  </body>
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar-close" id="sidebar-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <ul class="sidebar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#product">Product</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://www.ghlthemer.com" target="_blank" rel="noopener" class="sidebar-cta">Try GHLThemer →</a></li>
+    </ul>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-label">The Builder</span>
+      <h1>About <span class="gradient-text">Farhan Yousaf</span></h1>
+      <p>MERN-stack developer and SaaS founder based in Pakistan. I build tools that solve real problems for real people.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-inner two-col">
+      <div class="gsap-reveal">
+        <span class="section-label">Background</span>
+        <h2 class="section-headline">From freelance dev<br><span class="gradient-text">to SaaS founder.</span></h2>
+        <p class="section-body">
+          I started as a frontend developer, building UI systems and learning the full stack over time. After years of freelancing — delivering React/Next.js apps, REST APIs, and third-party integrations — I noticed a gap: GoHighLevel agencies had no good way to quickly brand client pages.
+        </p>
+        <p class="section-body" style="margin-top: -1rem;">
+          So I built GHLThemer. A drag-and-drop theme editor with 30+ niche templates, AI color generation, and conversion analytics — all deployable in 30 seconds with two lines of code. No API keys. No marketplace approval. Just results.
+        </p>
+        <a href="https://www.ghlthemer.com" target="_blank" rel="noopener" class="btn-primary">
+          Visit GHLThemer <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="gsap-reveal">
+        <div class="hero-img-wrapper" style="width:260px;height:260px;margin:0 auto;" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+          <img src="./img/WhatsApp Image 2023-11-03 at 12.54.13 AM.jpeg" alt="Farhan Yousaf" class="hero-photo" />
+          <div class="hero-img-ring"></div>
+          <div class="hero-img-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--bg-800); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-inner two-col">
+      <div class="gsap-reveal">
+        <span class="section-label">Journey</span>
+        <h2 class="section-headline">Timeline</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <span class="tl-year">2022</span>
+              <h4>Frontend Developer</h4>
+              <p>Built UI component libraries, design tokens, and interactive prototypes. Learned React deeply.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <span class="tl-year">2023</span>
+              <h4>Full-Stack Developer · Freelance</h4>
+              <p>Delivered end-to-end web apps for clients — React/Next.js frontends, Node.js APIs, MongoDB, and third-party integrations.</p>
+            </div>
+          </div>
+          <div class="tl-item tl-active">
+            <div class="tl-dot tl-dot-active"></div>
+            <div class="tl-body">
+              <span class="tl-year">2024 — Now</span>
+              <h4>SaaS Founder · GHLThemer</h4>
+              <p>Built and launched GHLThemer — from database architecture to drag-and-drop UI. The theming platform for GoHighLevel agencies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gsap-reveal">
+        <span class="section-label">Tech Stack</span>
+        <h3 class="stack-title">What I build with</h3>
+        <div class="stack-grid">
+          <div class="stack-item" data-tilt data-tilt-max="15" data-tilt-speed="400">
+            <i class="fab fa-react"></i><span>React</span>
+          </div>
+          <div class="stack-item" data-tilt data-tilt-max="15" data-tilt-speed="400">
+            <i class="fas fa-n"></i><span>Next.js</span>
+          </div>
+          <div class="stack-item" data-tilt data-tilt-max="15" data-tilt-speed="400">
+            <i class="fab fa-node-js"></i><span>Node.js</span>
+          </div>
+          <div class="stack-item" data-tilt data-tilt-max="15" data-tilt-speed="400">
+            <i class="fas fa-leaf"></i><span>MongoDB</span>
+          </div>
+          <div class="stack-item" data-tilt data-tilt-max="15" data-tilt-speed="400">
+            <i class="fas fa-server"></i><span>Express</span>
+          </div>
+          <div class="stack-item" data-tilt data-tilt-max="15" data-tilt-speed="400">
+            <i class="fas fa-robot"></i><span>GPT-4o</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="cta-inner">
+      <div class="cta-bg-glow"></div>
+      <h2 class="cta-headline">Want to see<br><span class="gradient-text">what I built?</span></h2>
+      <p class="cta-sub">GHLThemer is live. Try it free for 7 days — no credit card required.</p>
+      <a href="https://www.ghlthemer.com" target="_blank" rel="noopener" class="btn-primary btn-lg">
+        Try GHLThemer Free <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">Farhan<span>.</span></a>
+        <p>MERN Stack Developer &amp; Founder of <a href="https://www.ghlthemer.com" target="_blank" rel="noopener">GHLThemer</a></p>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="https://www.ghlthemer.com" target="_blank" rel="noopener">GHLThemer</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/farhan-yousaf-267771236/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/bobyjutt729" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/farhan.yousaf.313" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/farhanyousaf729/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Farhan Yousaf · All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
 </html>
